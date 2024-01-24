@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Рекламное агенство</title>
+
+    <link rel="stylesheet" href="./bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="index.css">
+
+    <script type="module" src="./index.js"></script>
+</head>
+<body>
+    <header class="app-header" id="app-header">
+    <div class="row">
+        <div class="col-auto">
+             <div class="app-header__app-name">
+                 <h1 class="display-4 mb-0">
+                   Рекламное агентство
+                 </h1>
+            </div>
+
+            <div class="app-header__app-name col-auto ">
+                    <h1 class="display-1 text-start mb-0">
+                        Лучше звоните Солу&#169;
+                    </h1>
+                </div>
+        </div>
+                <div class="user-info col d-inline-flex justify-content-end align-content-lg-stretch">
+                    <div class="row">
+                        <div class="user-info__avatar col d-flex align-self-end">
+                            </div>
+                    </div>
+            </div>
+        </div>
+
+    </header>
+    <main class="app-main container" id="app-main">
+        <ul id="flights-list" class="flights-list row">
+<!--                <li class="flights-list__item flight row">-->
+<!--                    <div class="flights-list__item-info ">-->
+<!--                        <div class="flights-list__item-info__header row">-->
+<!--                            <span class="clarify-text col-2 align-self-end">-->
+<!--                               Адрес:-->
+<!--                            </span>-->
+<!--                            <span class="flight__full_name col-8 align-self-end">-->
+<!--                               ул.Бауманская-->
+<!--                            </span>-->
+<!--                            <button type="button" class="flight__edit-btn btn btn-outline-primary col-2">-->
+<!--                                &#10000;-->
+<!--                            </button>-->
+<!--                            <button type="button" class="flight__delete-btn btn btn-outline-danger col-2">-->
+<!--                                &#10008;-->
+<!--                            </button>-->
+<!--                        </div>-->
+<!--                        <ul class="flight__tickets-list">-->
+<!--                            <li class="flight__tickets-list-item ticket row">-->
+<!--                                <div class="ticket-info row">-->
+<!--                                    <div class="row">-->
+<!--                                        <span class="clarify-text-small align-self-end col-2">-->
+<!--                                                Арендатор:-->
+<!--                                        </span>-->
+<!--                                        <span class="ticket__full_name col-4 align-self-end">-->
+<!--                                            ИП У.Уайт-->
+<!--                                        </span>-->
+<!--                                    </div>-->
+<!--                                    <div class="row">-->
+<!--                                        <div class="col-6">-->
+<!--                                            <div class="row">-->
+<!--                                                <span class="clarify-text-small align-self-end col-6">-->
+<!--                                                    Дата начала аренды:-->
+<!--                                                </span>-->
+<!--                                                <span class="ticket__start_date col-4">-->
+<!--                                                    2023-01-01-->
+<!--                                                </span>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                        <div class="col-6">-->
+<!--                                            <div class="row">-->
+<!--                                                <span class="clarify-text-small align-self-end col-6">-->
+<!--                                                    Дата конца аренды:-->
+<!--                                                </span>-->
+<!--                                                <span class="ticket__end_date col-4">-->
+<!--                                                2023-01-06-->
+<!--                                            </span>-->
+<!--                                            </div>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+<!--                                    <div class="row justify-content-center">-->
+<!--                                        <button type="button" class="ticket__move-btn btn btn-outline-info col-2">-->
+<!--                                            &#8617;-->
+<!--                                        </button>-->
+<!--                                        <button type="button" class="ticket__delete-btn btn btn-outline-danger col-2">-->
+<!--                                            &#10008;-->
+<!--                                        </button>-->
+<!--                                    </div>-->
+<!--                                </div>-->
+<!--                            </li>-->
+<!--                        </ul>-->
+<!--                        <div class="row justify-content-center">-->
+<!--                            <button type="button" class="flight__add-ticket-btn btn btn-outline-danger col-auto">-->
+<!--                                &#10010; Добавить заявку-->
+<!--                            </button>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </li>-->
+
+<!--                <li class="flights-adder-li row">-->
+<!--                    <button type="button" class="flights-adder btn btn-outline-danger">-->
+<!--                        &#10010; Добавить билборд-->
+<!--                    </button>-->
+<!--                </li>-->
+        </ul>
+    </main>
+
+    <dialog class="app-modal" id="modal-add-flight">
+        <form class="app-modal__form">
+            <span class="app-modal__question">
+                Создание нового Билборда
+            </span>
+            <label for="modal-add-flight-input-destination" class="app-modal__entry">
+                Место расположения
+            </label>
+            <input type="text" id="modal-add-flight-input-destination" class="app-modal__input" required/>
+            <div class="app-modal__controls">
+                <button type="button" class="app-modal__btn modal-ok-btn"> Принять </button>
+                <button type="button" class="app-modal__btn modal-cancel-btn"> Отменить </button>
+            </div>
+        </form>
+    </dialog>
+    <dialog class="app-modal" id="modal-edit-flight">
+        <form class="app-modal__form">
+            <span class="app-modal__question">
+                Изменение существующего билборда
+            </span>
+            <label for="modal-edit-flight-input-destination" class="app-modal__entry">
+                Место расположения
+            </label>
+            <input type="text" id="modal-edit-flight-input-destination" class="app-modal__input"/>
+            <div class="app-modal__controls">
+                <button type="button" class="app-modal__btn modal-ok-btn"> Принять </button>
+                <button type="button" class="app-modal__btn modal-cancel-btn"> Отменить </button>
+            </div>
+        </form>
+    </dialog>
+    <dialog class="app-modal" id="modal-delete-flight">
+        <form class="app-modal__form">
+            <span class="app-modal__question">
+                Удаление существующего биллборда
+            </span>
+            <div class="app-modal__controls">
+                <button type="button" class="app-modal__btn modal-ok-btn"> Принять </button>
+                <button type="button" class="app-modal__btn modal-cancel-btn"> Отменить </button>
+            </div>
+        </form>
+    </dialog>
+
+    <dialog class="app-modal" id="modal-add-ticket">
+        <form class="app-modal__form">
+            <span class="app-modal__question">
+                Создание новой компании
+            </span>
+
+            <label for="modal-add-ticket-input-full_name" class="app-modal__entry">
+                Наименование компании
+            </label>
+            <input type="text" id="modal-add-ticket-input-full_name" class="app-modal__input" required/>
+
+            <label for="modal-add-ticket-input-start_date" class="app-modal__entry">
+                Дата начала
+            </label>
+            <input type="date" id="modal-add-ticket-input-start_date" class="app-modal__input" required/>
+
+            <label for="modal-add-ticket-input-end_date" class="app-modal__entry">
+                Дата конца
+            </label>
+            <input type="date" id="modal-add-ticket-input-end_date" class="app-modal__input" required/>
+
+            <div class="app-modal__controls">
+                <button type="button" class="app-modal__btn modal-ok-btn"> Принять </button>
+                <button type="button" class="app-modal__btn modal-cancel-btn"> Отменить </button>
+            </div>
+        </form>
+    </dialog>
+    <dialog class="app-modal" id="modal-move-ticket">
+        <form class="app-modal__form">
+            <span class="app-modal__question">
+                Перемещение существующей заявки
+            </span>
+            <label for="modal-move-ticket-input-flight_id" class="app-modal__entry">
+                ID новой заявки
+            </label>
+            <input type="text" id="modal-move-ticket-input-flight_id" class="app-modal__input" required/>
+            <div class="app-modal__controls">
+                <button type="button" class="app-modal__btn modal-ok-btn"> Принять </button>
+                <button type="button" class="app-modal__btn modal-cancel-btn"> Отменить </button>
+            </div>
+        </form>
+    </dialog>
+    <dialog class="app-modal" id="modal-delete-ticket">
+        <form class="app-modal__form">
+            <span class="app-modal__question">
+                Удаление заявку
+            </span>
+            <div class="app-modal__controls">
+                <button type="button" class="app-modal__btn modal-ok-btn"> Принять </button>
+                <button type="button" class="app-modal__btn modal-cancel-btn"> Отменить </button>
+            </div>
+        </form>
+    </dialog>
+
+    <dialog class="app-notifications" id="app-notifications"></dialog>
+</body>
+</html>

@@ -1,0 +1,219 @@
+:root {
+    --gradient1: #f5f190;
+    --gradient2: #e3e3e3;
+
+    --shadow-color: #00000080;
+
+    --flight-bg-color: #f7df07;
+
+    --ticket-bg-color: #e5dccf ;
+
+    --flight-text-color: #8c3b18;
+
+    --ticket-text-color: #9c480c;
+
+    --add_btn-color: #de3540;
+
+}
+
+.container {
+    max-width: 90vw;
+}
+
+ul {
+    list-style: none;
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(var(--gradient2), var(--gradient1)) center / cover no-repeat;
+}
+
+.app-header {
+    margin-top: 1vw;
+    padding-bottom: 1vh;
+    padding-left: 10vh;
+    padding-right: 10vh;
+    background: #eddd47;
+}
+
+.app-header__app-name {
+    font-family: DejaVu Sans Mono, monospace;
+    color: var(--flight-text-color);
+}
+
+.clarify-text{
+    font-family: DejaVu Sans Mono, monospace;
+    font-size: xx-large;
+    color: var(--flight-text-color);
+}
+
+.clarify-text-small{
+    font-family: DejaVu Sans Mono, monospace;
+    font-size: large;
+    padding-bottom: 0.5vh;
+}
+
+.user-info__avatar {
+    width: clamp(2rem, 800px, 9rem);
+    height: clamp(2rem, 800px, 9rem);
+    border-radius: 35%;
+    border: 3px solid var(--flight-text-color);
+    background: url(public/images/Sol.jpeg) center / cover;
+}
+
+.user-info__username {
+    color: var(--flight-text-color);
+}
+
+
+#app-main {
+    padding-top: 3vh;
+    margin-bottom: 3vh;
+}
+
+.flights-list {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    row-gap: 5vh;
+}
+
+.flights-list__item {
+    padding: 4vw 1.5vw 1.5vw;
+    border-radius: 0.5vw;
+    box-shadow: 2px 2px 4px var(--shadow-color);
+    background: var(--flight-bg-color);
+}
+
+.flights-list__item-info__header {
+    padding: unset;
+    margin: auto auto 2vh;
+    max-width: 90%;
+    border-bottom: 2px solid var(--flight-text-color);
+}
+
+.flight__full_name {
+    padding-left: unset;
+    font-size: xxx-large;
+    font-family: DejaVu Sans Mono, monospace;
+    color: var(--flight-text-color);
+}
+
+.flight__edit-btn, .flight__delete-btn {
+    font-size: xx-large;
+    padding: unset;
+    margin-bottom: 0.3vw;
+    margin-right: 1vw;
+    max-width: 15%;
+    width: 5vw;
+    height: 4vw;
+}
+
+.flight__add-ticket-btn {
+    font-size: xx-large;
+    border: none;
+    color: var(--add_btn-color);
+}
+
+.flights-list__item-info__main {
+    align:center;
+    margin: auto auto 1vh;
+    padding: unset;
+    max-width: 90%;
+}
+
+.flight__destination, .ticket__start_date, .ticket__end_date, .flight__airplane_capacity {
+   padding-left: unset;
+   font-family: DejaVu Sans Mono, monospace;
+    color: var(--ticket-text-color);
+    font-size: x-large;
+    padding-top: 1vh;
+}
+
+.flight__tickets-list {
+    padding: unset;
+}
+
+.ticket {
+    margin: auto auto 1vh;
+    padding: 1vh 1vh;
+    width: 90%;
+    border-radius: 0.5vw;
+    box-shadow: 2px 2px 4px var(--shadow-color);
+    background: var(--ticket-bg-color);
+}
+
+.ticket-info {
+    margin: auto auto 1vh;
+}
+
+.ticket__id {
+    font-family: DejaVu Sans Mono, monospace;
+    color: var(--ticket-text-color);
+    font-size: large;
+}
+
+.ticket__full_name {
+    font-family: DejaVu Sans Mono, monospace;
+    color: var(--ticket-text-color);
+    font-size: xx-large;
+}
+
+.ticket__edit-btn, .ticket__delete-btn, .ticket__move-btn {
+    font-size: xx-large;
+    padding: unset;
+    width: 5vw;
+    height: 4vw;
+    margin-left: 0.5vw;
+    margin-right: 0.5vw;
+}
+
+.flights-adder {
+    width: 140%;
+    height: 15vh;
+    border-radius: 0.75vw;
+    border: 5px dashed var(--flight-text-color);
+    font-size: xx-large;
+}
+
+.app-modal[open] {
+    border: none;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+.app-modal::backdrop {
+    backdrop-filter: blur(10px);
+}
+
+.app-modal__form {
+    box-sizing: border-box;
+    padding: 2vh;
+    max-width: 50vw;
+    display: flex;
+    flex-direction: column;
+    gap: 1vh;
+}
+
+.app-modal__input {
+    padding: 0.6vw;
+    border-radius: 0.7vw;
+    font-size: large;
+    color: #000000;
+    border: 2px solid #000000;
+}
+
+.app-modal__controls {
+    display: flex;
+    justify-content: center;
+    gap: 1vw;
+}
+
+.app-modal__btn {
+    cursor: pointer;
+    padding: 5px;
+}
